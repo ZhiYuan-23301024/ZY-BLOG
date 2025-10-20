@@ -1,0 +1,79 @@
+{
+  "checkpoints": {
+    "前端开发/初学vuepress.md": {
+      "mtime": 1760452975237,
+      "wordCount": 158,
+      "fileSize": 1838
+    },
+    "后端开发/微服务SpringCloud.md": {
+      "mtime": 1760349471477,
+      "wordCount": 13,
+      "fileSize": 105
+    },
+    "前端开发/VMap.md": {
+      "mtime": 1760349353939,
+      "wordCount": 13,
+      "fileSize": 80
+    },
+    "大三课程/机器学习.md": {
+      "mtime": 1760501005326,
+      "wordCount": 146,
+      "fileSize": 5513
+    },
+    "我的项目/VMap.md": {
+      "mtime": 1760349353939,
+      "wordCount": 13,
+      "fileSize": 80
+    },
+    "大三课程/计算机网络.md": {
+      "mtime": 1760427147277,
+      "wordCount": 54,
+      "fileSize": 957
+    },
+    "我的项目/小学期挂号系统.md": {
+      "mtime": 1760494528666,
+      "wordCount": 70,
+      "fileSize": 1350
+    },
+    "后端开发/CI & DI模式.md": {
+      "mtime": 1760603135613,
+      "wordCount": 1,
+      "fileSize": 0
+    },
+    "大三课程/计算机组成原理.md": {
+      "mtime": 1760930926637,
+      "wordCount": 96,
+      "fileSize": 1387
+    }
+  },
+  "activityOverTime": {
+    "2025-10-12": {
+      "wordCount": 296,
+      "fileSize": 3223
+    },
+    "2025-10-13": {
+      "wordCount": 142,
+      "fileSize": 946
+    },
+    "2025-10-14": {
+      "wordCount": 1833,
+      "fileSize": 22296
+    },
+    "2025-10-15": {
+      "wordCount": 585,
+      "fileSize": 31241
+    },
+    "2025-10-16": {
+      "wordCount": 1,
+      "fileSize": 0
+    },
+    "2025-10-19": {
+      "wordCount": 158,
+      "fileSize": 1909
+    },
+    "2025-10-20": {
+      "wordCount": 58,
+      "fileSize": 940
+    }
+  }
+}

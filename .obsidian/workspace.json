@@ -1,0 +1,250 @@
+{
+  "main": {
+    "id": "22a2ecc192ba6520",
+    "type": "split",
+    "children": [
+      {
+        "id": "faecfa2d6115756e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "58d1c7344be91120",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "大三课程/assets/Pasted image 20251014143127.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20251014143127"
+            }
+          },
+          {
+            "id": "f3ce9881181b3a4a",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "大三课程/assets/Pasted image 20251014143348.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20251014143348"
+            }
+          },
+          {
+            "id": "8c7abeb5c26df5ce",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "大三课程/assets/Pasted image 20251014143127.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20251014143127"
+            }
+          },
+          {
+            "id": "31b7448b4ba2aa2a",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "大三课程/assets/Pasted image 20251014143348.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20251014143348"
+            }
+          },
+          {
+            "id": "6f02dc99137b69dc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "大三课程/计算机组成原理.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "计算机组成原理"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2e981fde9032ec3b",
+    "type": "split",
+    "children": [
+      {
+        "id": "c0e818e0d7043065",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ddee5d8c70d35770",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "022bb1dac96d2cd6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "ecc16a92a26aa6f0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "right": {
+    "id": "90e3c16707c6a0ff",
+    "type": "split",
+    "children": [
+      {
+        "id": "1afdce89a38ab07e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "aa4bfa95ff854005",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "贡献记录.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "贡献记录 的反向链接列表"
+            }
+          },
+          {
+            "id": "338f0b8c36ff49aa",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "贡献记录.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "贡献记录 的出链列表"
+            }
+          },
+          {
+            "id": "a705d9a462c54f47",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "02cb3b0fb64da885",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "贡献记录.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "贡献记录 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:创建新数据库": false,
+      "activity-heatmap:Open activity heatmap": false
+    }
+  },
+  "active": "6f02dc99137b69dc",
+  "lastOpenFiles": [
+    "大三课程/assets/file-20251019131446002.png",
+    "大三课程/计算机网络.md",
+    "大三课程/计算机组成原理.md",
+    "大三课程/机器学习.md",
+    "后端开发/CI & DI模式.md",
+    "人工智能与算法",
+    "后端开发/微服务SpringCloud.md",
+    "前端开发/初学vuepress.md",
+    "我的项目/小学期挂号系统.md",
+    "我的项目/assets/file-20251015100759481.png",
+    "我的项目/assets",
+    "我的项目/VMap.md",
+    "大三课程/assets/Pasted image 20251014145242.png",
+    "大三课程/assets/Pasted image 20251014143127.png",
+    "大三课程/assets/file-20251014150711634.png",
+    "大三课程/assets/Pasted image 20251014143348.png",
+    "大三课程/assets",
+    "我的项目",
+    "2016-12-15.md",
+    "未命名.canvas",
+    "2025-10-13.md",
+    "贡献记录.md",
+    "后端开发",
+    "前端开发"
+  ]
+}
