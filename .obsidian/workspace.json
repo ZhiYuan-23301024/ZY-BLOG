@@ -35,12 +35,14 @@
             "id": "8c7abeb5c26df5ce",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "大三课程/assets/Pasted image 20251014143127.png"
+                "file": "大三课程/机器学习.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20251014143127"
+              "icon": "lucide-file",
+              "title": "机器学习"
             }
           },
           {
@@ -61,16 +63,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三课程/计算机组成原理.md",
+                "file": "后端开发/Mybatis-Plus.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "计算机组成原理"
+              "title": "Mybatis-Plus"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -220,24 +222,35 @@
       "activity-heatmap:Open activity heatmap": false
     }
   },
-  "active": "6f02dc99137b69dc",
+  "active": "8c7abeb5c26df5ce",
   "lastOpenFiles": [
-    "大三课程/assets/file-20251019131446002.png",
+    "大三课程/assets/file-20251104200041647.png",
+    "大三课程/assets/file-20251104195518721.png",
+    "大三课程/assets/file-20251104195430707.png",
+    "大三课程/assets/file-20251104194608593.png",
+    "大三课程/assets/file-20251104191748989.png",
     "大三课程/计算机网络.md",
     "大三课程/计算机组成原理.md",
     "大三课程/机器学习.md",
-    "后端开发/CI & DI模式.md",
-    "人工智能与算法",
-    "后端开发/微服务SpringCloud.md",
+    "大三课程/assets/file-20251103204813823.png",
+    "大三课程/assets/file-20251103204803492.png",
+    "大三课程/assets/file-20251103195723121.png",
+    "大三课程/assets/file-20251103143723766.png",
+    "大三课程/assets/file-20251103142222496.png",
+    "大三课程/assets/file-20251103110934916.png",
     "前端开发/初学vuepress.md",
-    "我的项目/小学期挂号系统.md",
-    "我的项目/assets/file-20251015100759481.png",
-    "我的项目/assets",
+    "前端开发/前端夯基.md",
+    "后端开发/RESTFUL规范.md",
+    "后端开发/Mybatis-Plus.md",
+    "web前端开发/如何有模有样地搭建一个前端.md",
     "我的项目/VMap.md",
-    "大三课程/assets/Pasted image 20251014145242.png",
-    "大三课程/assets/Pasted image 20251014143127.png",
-    "大三课程/assets/file-20251014150711634.png",
-    "大三课程/assets/Pasted image 20251014143348.png",
+    "我的项目/小学期挂号系统.md",
+    "后端开发/微服务SpringCloud.md",
+    "后端开发/SSH隧道详解：为什么需要通过跳板机访问数据库.md",
+    "后端开发/CI & DI模式.md",
+    "web前端开发",
+    "人工智能与算法",
+    "我的项目/assets",
     "大三课程/assets",
     "我的项目",
     "2016-12-15.md",
