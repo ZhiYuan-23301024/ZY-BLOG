@@ -37,12 +37,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "大三课程/机器学习.md",
+                "file": "杂项/如何进行git合作（简略版）.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "机器学习"
+              "title": "如何进行git合作（简略版）"
             }
           },
           {
@@ -129,8 +129,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "90e3c16707c6a0ff",
@@ -222,8 +221,31 @@
       "activity-heatmap:Open activity heatmap": false
     }
   },
-  "active": "8c7abeb5c26df5ce",
+  "active": "ddee5d8c70d35770",
   "lastOpenFiles": [
+    "人工智能与算法/25秋 机器学习实验一.md",
+    "未命名",
+    "人工智能与算法/assets/file-20251109141652085.png",
+    "人工智能与算法/assets/file-20251109133345727.png",
+    "人工智能与算法/assets/file-20251109132851620.png",
+    "人工智能与算法/assets/file-20251109132826297.png",
+    "人工智能与算法/assets",
+    "人工智能与算法/GNN相关.md",
+    "我的项目/VMap.md",
+    "我的项目/小学期挂号系统.md",
+    "前端开发/如何有模有样地搭建一个前端.md",
+    "后端开发/SSH隧道详解：为什么需要通过跳板机访问数据库.md",
+    "后端开发/RESTFUL规范.md",
+    "杂项/如何进行git合作（简略版）.md",
+    "杂项/assets/file-20251105114804213.png",
+    "杂项/assets",
+    "前端开发/初学vuepress.md",
+    "前端开发/前端夯基.md",
+    "大三课程/机器学习.md",
+    "后端开发/微服务SpringCloud.md",
+    "后端开发/Mybatis-Plus.md",
+    "后端开发/CI & DI模式.md",
+    "杂项",
     "大三课程/assets/file-20251104200041647.png",
     "大三课程/assets/file-20251104195518721.png",
     "大三课程/assets/file-20251104195430707.png",
@@ -231,23 +253,6 @@
     "大三课程/assets/file-20251104191748989.png",
     "大三课程/计算机网络.md",
     "大三课程/计算机组成原理.md",
-    "大三课程/机器学习.md",
-    "大三课程/assets/file-20251103204813823.png",
-    "大三课程/assets/file-20251103204803492.png",
-    "大三课程/assets/file-20251103195723121.png",
-    "大三课程/assets/file-20251103143723766.png",
-    "大三课程/assets/file-20251103142222496.png",
-    "大三课程/assets/file-20251103110934916.png",
-    "前端开发/初学vuepress.md",
-    "前端开发/前端夯基.md",
-    "后端开发/RESTFUL规范.md",
-    "后端开发/Mybatis-Plus.md",
-    "web前端开发/如何有模有样地搭建一个前端.md",
-    "我的项目/VMap.md",
-    "我的项目/小学期挂号系统.md",
-    "后端开发/微服务SpringCloud.md",
-    "后端开发/SSH隧道详解：为什么需要通过跳板机访问数据库.md",
-    "后端开发/CI & DI模式.md",
     "web前端开发",
     "人工智能与算法",
     "我的项目/assets",
@@ -257,7 +262,6 @@
     "未命名.canvas",
     "2025-10-13.md",
     "贡献记录.md",
-    "后端开发",
-    "前端开发"
+    "后端开发"
   ]
 }

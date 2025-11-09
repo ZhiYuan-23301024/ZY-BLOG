@@ -71,14 +71,49 @@
       "fileSize": 74
     },
     "后端开发/RESTFUL规范.md": {
-      "mtime": 1761967355973,
-      "wordCount": 70,
-      "fileSize": 2882
+      "mtime": 1762414385439,
+      "wordCount": 126,
+      "fileSize": 3435
     },
     "前端开发/前端夯基.md": {
       "mtime": 1761971155843,
       "wordCount": 229,
       "fileSize": 6376
+    },
+    "杂项/如何进行git合作.md": {
+      "mtime": 1762313600117,
+      "wordCount": 5,
+      "fileSize": 37
+    },
+    "杂项/如何进行git合作（简略版）.md": {
+      "mtime": 1762314540870,
+      "wordCount": 48,
+      "fileSize": 1139
+    },
+    "人工智能与算法/GNN相关.md": {
+      "mtime": 1762393090014,
+      "wordCount": 24,
+      "fileSize": 167
+    },
+    "前端开发/如何有模有样地搭建一个前端.md": {
+      "mtime": 1761197218497,
+      "wordCount": 504,
+      "fileSize": 9988
+    },
+    "人工智能与算法/线性回归和逻辑回归.md": {
+      "mtime": 1762590360930,
+      "wordCount": 5,
+      "fileSize": 43
+    },
+    "人工智能与算法/BJTU 软件学院机器学习实验一.md": {
+      "mtime": 1762595782195,
+      "wordCount": 168,
+      "fileSize": 3210
+    },
+    "人工智能与算法/25秋 机器学习实验一.md": {
+      "mtime": 1762669227266,
+      "wordCount": 2021,
+      "fileSize": 30699
     }
   },
   "activityOverTime": {
@@ -115,8 +150,8 @@
       "fileSize": 6662
     },
     "2025-10-23": {
-      "wordCount": 195,
-      "fileSize": 5006
+      "wordCount": 699,
+      "fileSize": 14994
     },
     "2025-10-25": {
       "wordCount": 658,
@@ -149,6 +184,22 @@
     "2025-11-04": {
       "wordCount": 15,
       "fileSize": 705
+    },
+    "2025-11-05": {
+      "wordCount": 55,
+      "fileSize": 1578
+    },
+    "2025-11-06": {
+      "wordCount": 80,
+      "fileSize": 728
+    },
+    "2025-11-08": {
+      "wordCount": 871,
+      "fileSize": 15860
+    },
+    "2025-11-09": {
+      "wordCount": 1701,
+      "fileSize": 28134
     }
   }
 }
