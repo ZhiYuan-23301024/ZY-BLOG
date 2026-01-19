@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SSH隧道详解：为什么需要通过跳板机访问数据库 | ZY-BLOG</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+    <meta name="description" content="ZY-BLOG">
+    
+    <link rel="preload" href="/ZY-BLOG/assets/css/0.styles.29b68525.css" as="style"><link rel="preload" href="/ZY-BLOG/assets/js/app.a3ec89d2.js" as="script"><link rel="preload" href="/ZY-BLOG/assets/js/5.fac03409.js" as="script"><link rel="preload" href="/ZY-BLOG/assets/js/1.f349b2b9.js" as="script"><link rel="preload" href="/ZY-BLOG/assets/js/33.c685694d.js" as="script"><link rel="prefetch" href="/ZY-BLOG/assets/js/10.189b83e0.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/11.7eecee5e.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/12.ef3c0bbe.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/13.66f15ac6.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/14.25b2ca52.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/15.1f419cbc.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/16.5ea2ab5d.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/17.8303e40c.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/18.cb32143e.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/19.bd46074d.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/20.9abfc903.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/21.356f25f2.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/22.47503df0.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/23.a92238d2.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/24.f94d5409.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/25.e9e11f24.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/26.f253e999.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/27.316a3298.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/28.78d61f48.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/29.5a8b2f1e.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/3.ed70d2c5.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/30.f8bb6cc8.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/31.979b7b3c.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/32.07e41930.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/34.eef0ab4d.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/35.f0e18c33.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/36.04c5a596.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/37.9f523ad5.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/38.ec5c623e.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/39.09d6e1e7.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/4.123d1e02.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/40.0d215269.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/41.2de4671e.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/42.45f43f2b.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/43.e7e485c6.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/44.cb73a226.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/45.aa97187a.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/46.f6d88164.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/47.9d26d26b.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/48.25f379de.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/49.8615bc70.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/50.fa4d4e29.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/51.556155ce.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/52.582756f6.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/6.ae10f6ab.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/7.0a59c29b.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/8.1a186279.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/9.d0ee2d94.js">
+    <link rel="stylesheet" href="/ZY-BLOG/assets/css/0.styles.29b68525.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>ZY-BLOG</h3> <p class="description" data-v-59e6cb88>ZY-BLOG</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>ZhiYuan</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2026
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/ZY-BLOG/" class="home-link router-link-active"><img src="/ZY-BLOG/logo.png" alt="ZY-BLOG" class="logo"> <span class="site-name">ZY-BLOG</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/ZY-BLOG/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/云相关和运维/" class="nav-link"><i class="undefined"></i>
+  云相关和运维
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/人工智能与算法/" class="nav-link"><i class="undefined"></i>
+  人工智能与算法
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/前端开发/" class="nav-link"><i class="undefined"></i>
+  前端开发
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/后端开发/" class="nav-link"><i class="undefined"></i>
+  后端开发
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/大三课程/" class="nav-link"><i class="undefined"></i>
+  大三课程
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/大二课程/" class="nav-link"><i class="undefined"></i>
+  大二课程
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/小说/" class="nav-link"><i class="undefined"></i>
+  小说
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/我的项目/" class="nav-link"><i class="undefined"></i>
+  我的项目
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/杂项/" class="nav-link"><i class="undefined"></i>
+  杂项
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li></ul></div></div><div class="nav-item"><a href="/ZY-BLOG/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/ZY-BLOG/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Docs
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ZY-BLOG/docs/theme-reco/" class="nav-link"><i class="undefined"></i>
+  vuepress-reco
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/ZY-BLOG/avatar.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    ZhiYuan
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>38</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>6</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/ZY-BLOG/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/云相关和运维/" class="nav-link"><i class="undefined"></i>
+  云相关和运维
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/人工智能与算法/" class="nav-link"><i class="undefined"></i>
+  人工智能与算法
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/前端开发/" class="nav-link"><i class="undefined"></i>
+  前端开发
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/后端开发/" class="nav-link"><i class="undefined"></i>
+  后端开发
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/大三课程/" class="nav-link"><i class="undefined"></i>
+  大三课程
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/大二课程/" class="nav-link"><i class="undefined"></i>
+  大二课程
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/小说/" class="nav-link"><i class="undefined"></i>
+  小说
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/我的项目/" class="nav-link"><i class="undefined"></i>
+  我的项目
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/杂项/" class="nav-link"><i class="undefined"></i>
+  杂项
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li></ul></div></div><div class="nav-item"><a href="/ZY-BLOG/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/ZY-BLOG/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Docs
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ZY-BLOG/docs/theme-reco/" class="nav-link"><i class="undefined"></i>
+  vuepress-reco
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>SSH隧道详解：为什么需要通过跳板机访问数据库</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>ZhiYuan</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2026
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page" style="padding-right:0;"><section style="display:;"><div class="page-title"><h1 class="title">SSH隧道详解：为什么需要通过跳板机访问数据库</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>ZhiYuan</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>10/25/2025</span></i> <!----> <!----></div></div> <div class="theme-reco-content content__default"><h2 id="_1-什么是ssh隧道"><a href="#_1-什么是ssh隧道" class="header-anchor">#</a> 1. 什么是SSH隧道？</h2> <p>SSH隧道（SSH Tunneling）是一种通过加密的SSH连接来传输其他网络协议数据的技术。它就像在您的应用程序和目标服务之间建立了一条<strong>加密的管道</strong>，所有数据都通过这个安全通道传输。</p> <p>在您的场景中：</p> <div class="language- extra-class"><pre class="language-text"><code>graph LR
+    A[您的Spring Boot应用] --&gt; B[SSH隧道 localhost:63333]
+    B --&gt; C[公网ECS 124.71.238.8:22]
+    C --&gt; D[内网数据库 192.168.0.43:5432]
+</code></pre></div><h2 id="_2-为什么需要ssh隧道访问数据库"><a href="#_2-为什么需要ssh隧道访问数据库" class="header-anchor">#</a> 2. 为什么需要SSH隧道访问数据库？</h2> <h3 id="_2-1-网络架构分析"><a href="#_2-1-网络架构分析" class="header-anchor">#</a> 2.1 网络架构分析</h3> <p>根据您提供的信息：</p> <ul><li><p>​<strong>数据库服务器</strong>​：192.168.0.43 (内网IP)</p></li> <li><p>​<strong>公网ECS服务器</strong>​：124.71.238.8 (公网IP)</p></li> <li><p>​<strong>您的应用位置</strong>​：外部网络（不在同一个内网）</p></li></ul> <p>这种架构下：</p> <div class="language- extra-class"><pre class="language-text"><code>graph TD
+    A[您的应用] --&gt;|无法直接访问| B[192.168.0.43]
+    A --&gt;|可以通过公网访问| C[124.71.238.8]
+    C --&gt;|内网可达| B
+</code></pre></div><h3 id="_2-2-需要ssh隧道的根本原因"><a href="#_2-2-需要ssh隧道的根本原因" class="header-anchor">#</a> 2.2 需要SSH隧道的根本原因</h3> <ol><li><p>​<strong>数据库不暴露公网</strong>​：</p> <ul><li><p>数据库服务器192.168.0.43只有内网IP</p></li> <li><p>无法从互联网直接访问</p></li> <li><p>这是安全最佳实践（避免数据库直接暴露在公网）</p></li></ul></li> <li><p>​<strong>安全访问机制</strong>​：</p> <ul><li><p>ECS服务器124.71.238.8是唯一有公网IP的入口</p></li> <li><p>SSH提供加密认证通道</p></li> <li><p>只有授权用户（您）可以通过SSH访问</p></li></ul></li> <li><p>​<strong>网络隔离策略</strong>​：</p> <ul><li><p>企业/云环境通常采用网络隔离</p></li> <li><p>数据库放在私有子网</p></li> <li><p>应用服务器放在公有子网</p></li></ul></li></ol> <h2 id="_3-ssh隧道的工作原理"><a href="#_3-ssh隧道的工作原理" class="header-anchor">#</a> 3. SSH隧道的工作原理</h2> <h3 id="_3-1-本地端口转发-local-port-forwarding"><a href="#_3-1-本地端口转发-local-port-forwarding" class="header-anchor">#</a> 3.1 本地端口转发（Local Port Forwarding）</h3> <p>在您的场景中使用的技术：</p> <div class="language- extra-class"><pre class="language-text"><code>sequenceDiagram
+    participant App as 您的应用
+    participant Local as 本地机器
+    participant ECS as 公网ECS(124.71.238.8)
+    participant DB as 数据库(192.168.0.43)
+    
+    App-&gt;&gt;Local: 连接localhost:63333
+    Local-&gt;&gt;ECS: 通过SSH隧道转发
+    ECS-&gt;&gt;DB: 访问192.168.0.43:5432
+    DB-&gt;&gt;ECS: 返回数据
+    ECS-&gt;&gt;Local: 通过SSH隧道返回
+    Local-&gt;&gt;App: 返回数据
+</code></pre></div><h3 id="_3-2-技术细节"><a href="#_3-2-技术细节" class="header-anchor">#</a> 3.2 技术细节</h3> <ol><li><p>​<strong>建立SSH连接</strong>​：</p> <ul><li><p>使用SSH客户端连接到ECS</p></li> <li><p>认证通过后建立加密通道</p></li></ul></li> <li><p>​<strong>端口绑定</strong>​：</p> <ul><li><p>SSH客户端在本地打开一个端口（如63333）</p></li> <li><p>所有发往该端口的数据都被转发到ECS</p></li></ul></li> <li><p>​<strong>目标重定向</strong>​：</p> <ul><li><p>ECS服务器将收到的数据转发到内网数据库</p></li> <li><p>数据库响应通过相同路径返回</p></li></ul></li></ol> <h2 id="_4-在spring-boot中的必要性"><a href="#_4-在spring-boot中的必要性" class="header-anchor">#</a> 4. 在Spring Boot中的必要性</h2> <h3 id="_4-1-直接连接为什么不可行"><a href="#_4-1-直接连接为什么不可行" class="header-anchor">#</a> 4.1 直接连接为什么不可行？</h3> <p>如果尝试直接连接：</p> <div class="language- extra-class"><pre class="language-text"><code>// 这行代码会失败！
+spring.datasource.url=jdbc:postgresql://124.71.238.8:5432/hospital
+</code></pre></div><p>原因：</p> <ol><li><p>数据库不在124.71.238.8上</p></li> <li><p>ECS的5432端口没有数据库服务</p></li> <li><p>即使有，也不安全（未加密）</p></li></ol> <h3 id="_4-2-ssh隧道的优势"><a href="#_4-2-ssh隧道的优势" class="header-anchor">#</a> 4.2 SSH隧道的优势</h3> <ol><li><p>​<strong>安全性</strong>​：</p> <ul><li><p>所有传输数据加密</p></li> <li><p>数据库不暴露在公网</p></li> <li><p>通过SSH密钥/密码认证</p></li></ul></li> <li><p>​<strong>网络穿透</strong>​：</p> <ul><li><p>穿透内网边界</p></li> <li><p>无需修改网络架构</p></li></ul></li> <li><p>​<strong>最小权限原则</strong>​：</p> <ul><li><p>只有授权用户可建立隧道</p></li> <li><p>数据库只需对ECS开放</p></li></ul></li></ol> <h2 id="_5-您的具体实现方案"><a href="#_5-您的具体实现方案" class="header-anchor">#</a> 5. 您的具体实现方案</h2> <h3 id="_5-1-配置核心要素"><a href="#_5-1-配置核心要素" class="header-anchor">#</a> 5.1 配置核心要素</h3> <table><thead><tr><th>组件</th> <th>配置项</th> <th>值</th> <th>说明</th></tr></thead> <tbody><tr><td>​<strong>SSH隧道</strong>​</td> <td>ssh.tunnel.host</td> <td>124.71.238.8</td> <td>公网ECS地址</td></tr> <tr><td></td> <td>ssh.tunnel.port</td> <td>22</td> <td>SSH标准端口</td></tr> <tr><td></td> <td>ssh.tunnel.username</td> <td>root</td> <td>ECS登录用户</td></tr> <tr><td></td> <td>ssh.tunnel.password</td> <td>HGY25qiu@shixun</td> <td>ECS登录密码</td></tr> <tr><td></td> <td>ssh.tunnel.local-port</td> <td>63333</td> <td>本地隧道入口</td></tr> <tr><td>​<strong>数据库</strong>​</td> <td>spring.datasource.url</td> <td>jdbc:...localhost:63333</td> <td>指向隧道入口</td></tr> <tr><td></td> <td>spring.datasource.username</td> <td>root</td> <td>数据库用户</td></tr> <tr><td></td> <td>spring.datasource.password</td> <td>HGY25qiu@shixun</td> <td>数据库密码</td></tr></tbody></table> <h3 id="_5-2-工作流程"><a href="#_5-2-工作流程" class="header-anchor">#</a> 5.2 工作流程</h3> <div class="language- extra-class"><pre class="language-text"><code>graph TB
+    A[Spring Boot启动] --&gt; B[初始化SSH隧道]
+    B --&gt; C[建立到124.71.238.8的SSH连接]
+    C --&gt; D[绑定本地63333端口]
+    D --&gt; E[配置数据库连接]
+    E --&gt; F[应用通过localhost:63333访问]
+    F --&gt; G[流量经SSH隧道加密传输]
+    G --&gt; H[ECS解密并转发到192.168.0.43]
+    H --&gt; I[数据库处理请求]
+    I --&gt; H[返回响应]
+    H --&gt; G[加密返回]
+    G --&gt; F[应用接收响应]
+</code></pre></div><h2 id="_6-生产环境建议"><a href="#_6-生产环境建议" class="header-anchor">#</a> 6. 生产环境建议</h2> <h3 id="_6-1-安全增强措施"><a href="#_6-1-安全增强措施" class="header-anchor">#</a> 6.1 安全增强措施</h3> <ol><li><p>​<strong>使用SSH密钥替代密码</strong>​：</p> <div class="language- extra-class"><pre class="language-text"><code>ssh-keygen -t rsa -b 4096 -f deploy_key
+</code></pre></div></li> <li><p>​<strong>限制ECS用户权限</strong>​：</p> <div class="language- extra-class"><pre class="language-text"><code># 创建专用用户
+adduser db_tunnel_user
+</code></pre></div></li> <li><p>​<strong>数据库网络隔离</strong>​：</p> <ul><li>配置安全组只允许ECS访问</li></ul></li></ol> <h3 id="_6-2-高可用方案"><a href="#_6-2-高可用方案" class="header-anchor">#</a> 6.2 高可用方案</h3> <ol><li><p>​<strong>隧道监控</strong>​：</p> <div class="language- extra-class"><pre class="language-text"><code>@Scheduled(fixedRate = 30000)
+public void checkTunnel() {
+    if (!tunnelConfig.isActive()) {
+        logger.warn(&quot;SSH隧道断开，尝试重连...&quot;);
+        tunnelConfig.reconnect();
+    }
+}
+</code></pre></div></li> <li><p>​<strong>双隧道备份</strong>​：</p> <div class="language- extra-class"><pre class="language-text"><code># 主隧道
+ssh.tunnel.primary.host=124.71.238.8
+
+# 备用隧道
+ssh.tunnel.backup.host=backup.ecs.com
+</code></pre></div></li></ol> <h2 id="_7-替代方案比较"><a href="#_7-替代方案比较" class="header-anchor">#</a> 7. 替代方案比较</h2> <table><thead><tr><th>方案</th> <th>优点</th> <th>缺点</th> <th>适用场景</th></tr></thead> <tbody><tr><td>​<strong>SSH隧道</strong>​</td> <td>简单易用、加密传输</td> <td>单点故障、性能开销</td> <td>开发测试、小型应用</td></tr> <tr><td>​<strong>VPN</strong>​</td> <td>全网络加密、高可用</td> <td>配置复杂、成本高</td> <td>企业级生产环境</td></tr> <tr><td>​<strong>数据库公网访问</strong>​</td> <td>直接连接</td> <td>极不安全、易受攻击</td> <td>不推荐使用</td></tr> <tr><td>​<strong>云平台VPC对等</strong>​</td> <td>高性能、安全</td> <td>云平台锁定、配置复杂</td> <td>云原生应用</td></tr></tbody></table> <h2 id="结论"><a href="#结论" class="header-anchor">#</a> 结论</h2> <p>在您的场景中，使用SSH隧道是访问内网数据库的<strong>最合理方案</strong>，因为它：</p> <ol><li><p>解决了内网数据库不可达的问题</p></li> <li><p>提供了加密的安全通道</p></li> <li><p>无需修改现有网络架构</p></li> <li><p>与Spring Boot集成简单</p></li></ol> <p>通过配置SSH隧道，您的Spring Boot应用可以安全地访问位于内网的PostgreSQL数据库，同时保持数据库本身不暴露在公网环境中，符合安全最佳实践。</p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">11/4/2025, 8:05:30 PM</span></div></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:0;" data-v-b57cc07c data-v-7dd95ae2></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/ZY-BLOG/assets/js/app.a3ec89d2.js" defer></script><script src="/ZY-BLOG/assets/js/5.fac03409.js" defer></script><script src="/ZY-BLOG/assets/js/1.f349b2b9.js" defer></script><script src="/ZY-BLOG/assets/js/33.c685694d.js" defer></script>
+  </body>
+</html>

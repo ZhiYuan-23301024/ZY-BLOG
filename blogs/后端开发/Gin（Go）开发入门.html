@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Gin（Go）开发入门 | ZY-BLOG</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+    <meta name="description" content="ZY-BLOG">
+    
+    <link rel="preload" href="/ZY-BLOG/assets/css/0.styles.29b68525.css" as="style"><link rel="preload" href="/ZY-BLOG/assets/js/app.a3ec89d2.js" as="script"><link rel="preload" href="/ZY-BLOG/assets/js/5.fac03409.js" as="script"><link rel="preload" href="/ZY-BLOG/assets/js/1.f349b2b9.js" as="script"><link rel="preload" href="/ZY-BLOG/assets/js/30.f8bb6cc8.js" as="script"><link rel="prefetch" href="/ZY-BLOG/assets/js/10.189b83e0.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/11.7eecee5e.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/12.ef3c0bbe.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/13.66f15ac6.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/14.25b2ca52.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/15.1f419cbc.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/16.5ea2ab5d.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/17.8303e40c.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/18.cb32143e.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/19.bd46074d.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/20.9abfc903.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/21.356f25f2.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/22.47503df0.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/23.a92238d2.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/24.f94d5409.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/25.e9e11f24.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/26.f253e999.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/27.316a3298.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/28.78d61f48.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/29.5a8b2f1e.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/3.ed70d2c5.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/31.979b7b3c.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/32.07e41930.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/33.c685694d.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/34.eef0ab4d.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/35.f0e18c33.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/36.04c5a596.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/37.9f523ad5.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/38.ec5c623e.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/39.09d6e1e7.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/4.123d1e02.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/40.0d215269.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/41.2de4671e.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/42.45f43f2b.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/43.e7e485c6.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/44.cb73a226.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/45.aa97187a.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/46.f6d88164.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/47.9d26d26b.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/48.25f379de.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/49.8615bc70.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/50.fa4d4e29.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/51.556155ce.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/52.582756f6.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/6.ae10f6ab.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/7.0a59c29b.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/8.1a186279.js"><link rel="prefetch" href="/ZY-BLOG/assets/js/9.d0ee2d94.js">
+    <link rel="stylesheet" href="/ZY-BLOG/assets/css/0.styles.29b68525.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>ZY-BLOG</h3> <p class="description" data-v-59e6cb88>ZY-BLOG</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>ZhiYuan</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2026
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/ZY-BLOG/" class="home-link router-link-active"><img src="/ZY-BLOG/logo.png" alt="ZY-BLOG" class="logo"> <span class="site-name">ZY-BLOG</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/ZY-BLOG/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/云相关和运维/" class="nav-link"><i class="undefined"></i>
+  云相关和运维
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/人工智能与算法/" class="nav-link"><i class="undefined"></i>
+  人工智能与算法
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/前端开发/" class="nav-link"><i class="undefined"></i>
+  前端开发
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/后端开发/" class="nav-link"><i class="undefined"></i>
+  后端开发
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/大三课程/" class="nav-link"><i class="undefined"></i>
+  大三课程
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/大二课程/" class="nav-link"><i class="undefined"></i>
+  大二课程
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/小说/" class="nav-link"><i class="undefined"></i>
+  小说
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/我的项目/" class="nav-link"><i class="undefined"></i>
+  我的项目
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/杂项/" class="nav-link"><i class="undefined"></i>
+  杂项
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li></ul></div></div><div class="nav-item"><a href="/ZY-BLOG/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/ZY-BLOG/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Docs
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ZY-BLOG/docs/theme-reco/" class="nav-link"><i class="undefined"></i>
+  vuepress-reco
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><img src="/ZY-BLOG/avatar.png" alt="author-avatar" class="personal-img" data-v-1fad0c41> <h3 class="name" data-v-1fad0c41>
+    ZhiYuan
+  </h3> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>38</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>6</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/ZY-BLOG/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/云相关和运维/" class="nav-link"><i class="undefined"></i>
+  云相关和运维
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/人工智能与算法/" class="nav-link"><i class="undefined"></i>
+  人工智能与算法
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/前端开发/" class="nav-link"><i class="undefined"></i>
+  前端开发
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/后端开发/" class="nav-link"><i class="undefined"></i>
+  后端开发
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/大三课程/" class="nav-link"><i class="undefined"></i>
+  大三课程
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/大二课程/" class="nav-link"><i class="undefined"></i>
+  大二课程
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/小说/" class="nav-link"><i class="undefined"></i>
+  小说
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/我的项目/" class="nav-link"><i class="undefined"></i>
+  我的项目
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/数据库/" class="nav-link"><i class="undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/杂项/" class="nav-link"><i class="undefined"></i>
+  杂项
+</a></li><li class="dropdown-item"><!----> <a href="/ZY-BLOG/categories/算法/" class="nav-link"><i class="undefined"></i>
+  算法
+</a></li></ul></div></div><div class="nav-item"><a href="/ZY-BLOG/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/ZY-BLOG/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Docs
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ZY-BLOG/docs/theme-reco/" class="nav-link"><i class="undefined"></i>
+  vuepress-reco
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/recoluan" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>Gin（Go）开发入门</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><span data-v-59e6cb88>ZhiYuan</span>
+          
+        <span data-v-59e6cb88>2017 - </span>
+        2026
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page" style="padding-right:0;"><section style="display:;"><div class="page-title"><h1 class="title">Gin（Go）开发入门</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>ZhiYuan</span></i> <!----> <!----> <!----></div></div> <div class="theme-reco-content content__default"><h2 id="_1-安装-go-语言环境-必须"><a href="#_1-安装-go-语言环境-必须" class="header-anchor">#</a> 1. 安装 Go 语言环境（必须）</h2> <p>​<strong>为什么需要：​</strong>​ 因为这是 Go 语言编写的程序，需要 Go 编译器来运行。</p> <p>​<strong>操作步骤：​</strong>​</p> <div class="language- extra-class"><pre class="language-text"><code># 检查是否已安装 Go
+go version
+
+# 如果未安装，从官网下载：https://golang.org/dl/
+# 或者使用包管理器安装
+</code></pre></div><p>​<strong>验证安装：​</strong>​</p> <div class="language- extra-class"><pre class="language-text"><code>go version
+# 应该输出类似：go version go1.24.0 linux/amd64
+</code></pre></div><h2 id="_2-设置-go-开发环境-必须"><a href="#_2-设置-go-开发环境-必须" class="header-anchor">#</a> 2. 设置 Go 开发环境（必须）</h2> <p>​<strong>为什么需要：​</strong>​ 配置正确的环境变量，确保 Go 工具链正常工作。</p> <p>​<strong>操作步骤：​</strong>​</p> <div class="language- extra-class"><pre class="language-text"><code># 检查关键环境变量
+go env GOPATH
+go env GOROOT
+
+# 设置模块代理（特别是中国大陆用户）
+go env -w GOPROXY=https://goproxy.cn,direct
+go env -w GO111MODULE=on
+</code></pre></div><h2 id="_3-创建项目目录结构-必须"><a href="#_3-创建项目目录结构-必须" class="header-anchor">#</a> 3. 创建项目目录结构（必须）</h2> <p>​<strong>为什么需要：​</strong>​ 组织代码文件，便于模块管理。</p> <p>​<strong>操作步骤：​</strong>​</p> <div class="language- extra-class"><pre class="language-text"><code># 创建项目目录
+mkdir my-gin-app
+cd my-gin-app
+
+# 初始化 Go 模块
+go mod init my-gin-app
+</code></pre></div><h2 id="_4-创建并保存代码文件-必须"><a href="#_4-创建并保存代码文件-必须" class="header-anchor">#</a> 4. 创建并保存代码文件（必须）</h2> <p>​<strong>为什么需要：​</strong>​ 将代码保存为 <code>.go</code>文件供编译器读取。</p> <p>​<strong>操作步骤：​</strong>​</p> <div class="language- extra-class"><pre class="language-text"><code># 创建 main.go 文件，将代码复制进去
+# 或者使用编辑器创建文件
+</code></pre></div><p>​<strong>项目结构应该如下：​</strong>​</p> <div class="language- extra-class"><pre class="language-text"><code>my-gin-app/
+├── go.mod
+└── main.go
+</code></pre></div><h2 id="_5-下载-gin-依赖-必须"><a href="#_5-下载-gin-依赖-必须" class="header-anchor">#</a> 5. 下载 Gin 依赖（必须）</h2> <p>​<strong>为什么需要：​</strong>​ 代码中引用了 <code>github.com/gin-gonic/gin</code>包，需要先下载。</p> <p>​<strong>操作步骤：​</strong>​</p> <div class="language- extra-class"><pre class="language-text"><code># 在项目目录下执行
+go mod tidy
+# 或者手动下载
+go get github.com/gin-gonic/gin@latest
+</code></pre></div><h2 id="_6-完整的操作流程"><a href="#_6-完整的操作流程" class="header-anchor">#</a> 6. 完整的操作流程</h2> <div class="language- extra-class"><pre class="language-text"><code># 1. 创建项目目录
+mkdir my-gin-app
+cd my-gin-app
+
+# 2. 初始化模块
+go mod init my-gin-app
+
+# 3. 创建 main.go 文件（将你的代码复制进去）
+
+# 4. 下载依赖
+go mod tidy
+
+# 5. 运行程序
+go run main.go
+</code></pre></div><h2 id="_7-验证运行结果"><a href="#_7-验证运行结果" class="header-anchor">#</a> 7. 验证运行结果</h2> <p>​<strong>成功运行的标志：​</strong>​</p> <div class="language- extra-class"><pre class="language-text"><code>[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in &quot;debug&quot; mode. Switch to &quot;release&quot; mode in production.
+ - using env:   export GIN_MODE=release
+ - using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --&gt; main.main.func1 (3 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+</code></pre></div><p>​<strong>测试 API：​</strong>​</p> <div class="language- extra-class"><pre class="language-text"><code># 新开终端窗口测试
+curl http://localhost:8080/ping
+# 应该返回：{&quot;message&quot;:&quot;pong&quot;}
+</code></pre></div><h2 id="_8-可能遇到的问题及解决方案"><a href="#_8-可能遇到的问题及解决方案" class="header-anchor">#</a> 8. 可能遇到的问题及解决方案</h2> <h3 id="问题-1-端口被占用"><a href="#问题-1-端口被占用" class="header-anchor">#</a> 问题 1：端口被占用</h3> <div class="language- extra-class"><pre class="language-text"><code>// 修改代码使用其他端口
+r.Run(&quot;:9090&quot;)  // 使用 9090 端口
+</code></pre></div><h3 id="问题-2-权限不足-linux-macos"><a href="#问题-2-权限不足-linux-macos" class="header-anchor">#</a> 问题 2：权限不足（Linux/macOS）</h3> <div class="language- extra-class"><pre class="language-text"><code># 使用 sudo 或更改端口号 &gt; 1024
+sudo go run main.go
+# 或者修改端口
+r.Run(&quot;:8080&quot;)
+</code></pre></div><h3 id="问题-3-网络问题下载失败"><a href="#问题-3-网络问题下载失败" class="header-anchor">#</a> 问题 3：网络问题下载失败</h3> <div class="language- extra-class"><pre class="language-text"><code># 设置国内代理
+go env -w GOPROXY=https://goproxy.cn,direct
+go env -w GOSUMDB=off  # 临时关闭校验（不推荐长期使用）
+</code></pre></div><h2 id="_9-一键脚本-快速开始"><a href="#_9-一键脚本-快速开始" class="header-anchor">#</a> 9. 一键脚本（快速开始）</h2> <p>创建 <code>setup.sh</code>文件：</p> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+mkdir -p my-gin-app
+cd my-gin-app
+go mod init my-gin-app
+cat &gt; main.go &lt;&lt; 'EOF'
+package main
+
+import (
+    &quot;net/http&quot;
+    &quot;github.com/gin-gonic/gin&quot;
+)
+
+func main() {
+    r := gin.Default()
+    r.GET(&quot;/ping&quot;, func(c *gin.Context) {
+        c.JSON(http.StatusOK, gin.H{
+            &quot;message&quot;: &quot;pong&quot;,
+        })
+    })
+    r.Run()
+}
+EOF
+go mod tidy
+echo &quot;设置完成！运行: go run main.go&quot;
+</code></pre></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>​<strong>必须完成的前置动作：​</strong>​</p> <ol><li><p>✅ 安装 Go 语言环境</p></li> <li><p>✅ 创建项目目录和 go.mod 文件</p></li> <li><p>✅ 保存代码到 main.go 文件</p></li> <li><p>✅ 下载 Gin 依赖包</p></li> <li><p>✅ 运行程序</p></li></ol></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:0;" data-v-b57cc07c data-v-7dd95ae2></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/ZY-BLOG/assets/js/app.a3ec89d2.js" defer></script><script src="/ZY-BLOG/assets/js/5.fac03409.js" defer></script><script src="/ZY-BLOG/assets/js/1.f349b2b9.js" defer></script><script src="/ZY-BLOG/assets/js/30.f8bb6cc8.js" defer></script>
+  </body>
+</html>
