@@ -1,10 +1,10 @@
 {
   "LatestVersion": "1.6.3",
   "currentWallpaper": {
-    "path": "plugins/live-wallpaper/wallpapers/active/normal/LXR_edit_131114035641335_quality.jpg",
+    "path": "plugins/live-wallpaper/wallpapers/active/normal/6c84a7ebe6fd4649bdcef7de028f06d9.jpeg~tplv-a9rns2rl98-image_raw_b_quality.png",
     "type": "image",
     "zIndex": 68,
-    "opacity": 39,
+    "opacity": 25,
     "brightness": 78,
     "blurRadius": 0,
     "contrast": 116,
@@ -20,10 +20,10 @@
   },
   "globalConfig": {
     "config": {
-      "path": "plugins/live-wallpaper/wallpapers/active/normal/LXR_edit_131114035641335_quality.jpg",
+      "path": "plugins/live-wallpaper/wallpapers/active/normal/6c84a7ebe6fd4649bdcef7de028f06d9.jpeg~tplv-a9rns2rl98-image_raw_b_quality.png",
       "type": "image",
       "zIndex": 68,
-      "opacity": 39,
+      "opacity": 25,
       "brightness": 78,
       "blurRadius": 0,
       "contrast": 116,
@@ -42,7 +42,7 @@
   "Preview": false,
   "WallpaperConfigs": [
     {
-      "path": "plugins/live-wallpaper/wallpapers/active/normal/LXR_edit_131114035641335_quality.jpg",
+      "path": "plugins/live-wallpaper/wallpapers/active/normal/6c84a7ebe6fd4649bdcef7de028f06d9.jpeg~tplv-a9rns2rl98-image_raw_b_quality.png",
       "type": "image",
       "zIndex": 5,
       "opacity": 40,
@@ -223,6 +223,11 @@
     }
   ],
   "HistoryPaths": [
+    {
+      "path": "plugins/live-wallpaper/wallpapers/history/6c84a7ebe6fd4649bdcef7de028f06d9.jpeg~tplv-a9rns2rl98-image_raw_b_quality.png",
+      "type": "image",
+      "fileName": "6c84a7ebe6fd4649bdcef7de028f06d9.jpeg~tplv-a9rns2rl98-image_raw_b_quality.png"
+    },
     {
       "path": "plugins/live-wallpaper/wallpapers/history/LXR_edit_131114035641335_quality.jpg",
       "type": "image",
