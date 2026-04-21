@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "杂项/贝利亚指示：大学一定要对社会开放.md",
+                "file": "杂项/在平板本地搭建轻生产力环境.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "贝利亚指示：大学一定要对社会开放"
+              "title": "在平板本地搭建轻生产力环境"
             }
           }
         ]
@@ -98,7 +98,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "杂项/贝利亚指示：大学一定要对社会开放.md",
+            "file": "杂项/在平板本地搭建轻生产力环境.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -155,16 +155,20 @@
   },
   "active": "6380035623f41cfa",
   "lastOpenFiles": [
-    "杂项/assets/Pasted image 20260418174827.png",
+    "课程/计算机网络.md",
+    "课程/高数/一元微分——中值定理、微分等式和不等式.md",
+    "课程/高数.md",
+    "课程/高数",
+    "后端开发/CI & CD模式.md",
+    "课程/操作系统.md",
     "杂项/贝利亚指示：大学一定要对社会开放.md",
+    "杂项/assets/Pasted image 20260418174827.png",
     "杂项/assets/xhs.png",
     "杂项/assets/nn.png",
     "assets/xhs.md",
     "assets",
     "杂项/assets/muke.jpg",
-    "课程/计算机网络.md",
     "课程/数据结构.md",
-    "课程/操作系统.md",
     "杂项/mit 6.1810.md",
     "课程/机器学习.md",
     "课程/计算机组成原理.md",
@@ -178,7 +182,6 @@
     "杂项/assets/火狐全屏.jpg",
     "杂项/Agent相关.md",
     "课程/assets/2025-11-15 120004.png",
-    "后端开发/CI & CD模式.md",
     "后端开发/分布式与RPC.md"
   ]
 }
