@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "杂项/在平板本地搭建轻生产力环境.md",
+                "file": "课程/数据结构/线性表.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "在平板本地搭建轻生产力环境"
+              "title": "线性表"
             }
           }
         ]
@@ -153,10 +153,18 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "6380035623f41cfa",
+  "active": "edbae205d64eb6e8",
   "lastOpenFiles": [
-    "课程/计算机网络.md",
+    "课程/计算机网络",
     "课程/高数/一元微分——中值定理、微分等式和不等式.md",
+    "课程/数据结构/线性表.md",
+    "课程/数据结构/绪论.md",
+    "课程/数据结构/查找.md",
+    "课程/数据结构/树.md",
+    "课程/数据结构",
+    "课程/计算机网络.md",
+    "课程/机器学习.md",
+    "杂项/在平板本地搭建轻生产力环境.md",
     "课程/高数.md",
     "课程/高数",
     "后端开发/CI & CD模式.md",
@@ -168,11 +176,8 @@
     "assets/xhs.md",
     "assets",
     "杂项/assets/muke.jpg",
-    "课程/数据结构.md",
     "杂项/mit 6.1810.md",
-    "课程/机器学习.md",
     "课程/计算机组成原理.md",
-    "杂项/在平板本地搭建轻生产力环境.md",
     "杂项/git.md",
     "杂项/Gerrit.md",
     "开源贡献/SecretFlow.md",
