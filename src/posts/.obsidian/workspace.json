@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "课程/操作系统/内存管理.md",
+                "file": "数据库/Redis 杂谈.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "内存管理"
+              "title": "Redis 杂谈"
             }
           }
         ]
@@ -171,9 +171,10 @@
   },
   "active": "517bbadb34141f07",
   "lastOpenFiles": [
+    "云相关和运维/linux.md",
+    "课程/操作系统/内存管理.md",
     "未命名.base",
     "assets/xhs.md",
-    "课程/操作系统/内存管理.md",
     "assets",
     "课程/操作系统/进程管理.md",
     "人工智能与算法/25秋 机器学习实验一.md",
@@ -191,7 +192,6 @@
     "后端开发/SSH隧道详解：为什么需要通过跳板机访问数据库.md",
     "后端开发/分布式与RPC.md",
     "后端开发/RESTFUL规范.md",
-    "云相关和运维/linux.md",
     "后端开发/Gin（Go）开发入门.md",
     "后端开发/Mybatis-Plus.md"
   ]

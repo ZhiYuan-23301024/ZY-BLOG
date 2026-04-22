@@ -140,6 +140,12 @@ sds _sdsMakeRoomFor(sds s, size_t addlen, int greedy) {
 
 ### 五种数据结构
 
+```ad-tip
+title: This is a tip
+
+This is the content of the admonition tip.
+```
+
 #### String
 
 二进制安全，可存储任意二进制数据（可以存储包含`\0`的任意二进制数据）

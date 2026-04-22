@@ -1,5 +1,5 @@
 import { defineUserConfig } from "vuepress";
-
+import obsidianPlugin from "./vuepress-plugin-obsidian/dist";
 import theme from "./theme.js";
 
 export default defineUserConfig({
@@ -14,6 +14,9 @@ export default defineUserConfig({
   head: [
     ["link", { rel: "icon", href: "/assets/images/logo.jpg" }],
   ],
+  plugins: [
+    obsidianPlugin()
+  ]
   // 和 PWA 一起启用
   // shouldPrefetch: false,
 });
