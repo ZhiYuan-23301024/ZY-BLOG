@@ -1,3 +1,5 @@
 {
-  "theme": "obsidian"
+  "theme": "obsidian",
+  "cssTheme": "Things",
+  "interfaceFontFamily": "Arial Black"
 }
