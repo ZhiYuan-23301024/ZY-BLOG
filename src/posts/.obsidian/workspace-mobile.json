@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "c12d79799e26da83",
+        "id": "a67d5e6d13e4d870",
         "type": "tabs",
         "children": [
           {
-            "id": "6380035623f41cfa",
+            "id": "5e7109150be162b2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "课程/线性代数/向量组.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -49,7 +49,7 @@
         "state": {
           "type": "search",
           "state": {
-            "query": "tag:#线性代数",
+            "query": "",
             "matchingCase": false,
             "explainSearch": false,
             "collapseAll": false,
@@ -86,7 +86,7 @@
         }
       }
     ],
-    "currentTab": 1
+    "currentTab": 0
   },
   "right": {
     "id": "c7a53b1f58fa1a39",
@@ -153,10 +153,11 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "74d589ac309a6cdc",
+  "active": "5e7109150be162b2",
   "lastOpenFiles": [
     "课程/高数/一元微分——中值定理、微分等式和不等式.md",
     "课程/线性代数/向量组.md",
+    "2026-04-23.md",
     "课程/线性代数",
     "课程/数据结构/线性表.md",
     "课程/数据结构/绪论.md",
@@ -191,7 +192,6 @@
     "杂项/git.md",
     "杂项/Gerrit.md",
     "开源贡献/SecretFlow.md",
-    "assets/火狐全屏.md",
     "杂项/assets/项目运行.jpg",
     "未命名",
     "杂项/assets/火狐全屏.jpg"
