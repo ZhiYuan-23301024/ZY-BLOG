@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "课程/数据结构/线性表.md",
+                "file": "课程/线性代数/向量组.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "线性表"
+              "title": "向量组"
             }
           }
         ]
@@ -49,7 +49,7 @@
         "state": {
           "type": "search",
           "state": {
-            "query": "",
+            "query": "tag:#线性代数",
             "matchingCase": false,
             "explainSearch": false,
             "collapseAll": false,
@@ -86,7 +86,7 @@
         }
       }
     ],
-    "currentTab": 0
+    "currentTab": 1
   },
   "right": {
     "id": "c7a53b1f58fa1a39",
@@ -98,7 +98,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "课程/数据结构/线性表.md",
+            "file": "课程/线性代数/向量组.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -153,27 +153,32 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "6380035623f41cfa",
+  "active": "74d589ac309a6cdc",
   "lastOpenFiles": [
+    "课程/高数/一元微分——中值定理、微分等式和不等式.md",
+    "课程/线性代数/向量组.md",
+    "课程/线性代数",
+    "课程/数据结构/线性表.md",
+    "课程/数据结构/绪论.md",
+    "人工智能与算法/AI Infra.md",
+    "人工智能与算法/代码随想录-数组.md",
+    "杂项/贝利亚指示：大学一定要对社会开放.md",
+    "人工智能与算法/25秋 机器学习实验一.md",
+    "课程/计算机网络.md",
+    "课程/数据结构/查找.md",
+    "杂项/在平板本地搭建轻生产力环境.md",
+    "课程/操作系统.md",
+    "课程/操作系统/进程管理.md",
     "课程/机器学习.md",
     "杂项/mit 6.1810.md",
-    "课程/数据结构/查找.md",
-    "课程/操作系统.md",
     "课程/操作系统/内存管理.md",
-    "杂项/贝利亚指示：大学一定要对社会开放.md",
     "云相关和运维/linux.md",
     "课程/计算机组成原理.md",
-    "课程/操作系统/进程管理.md",
-    "课程/计算机网络.md",
     "课程/操作系统",
-    "课程/数据结构/线性表.md",
     "课程/assets/2025-11-15 120004.png",
     "课程/计算机网络",
-    "课程/高数/一元微分——中值定理、微分等式和不等式.md",
-    "课程/数据结构/绪论.md",
     "课程/数据结构/树.md",
     "课程/数据结构",
-    "杂项/在平板本地搭建轻生产力环境.md",
     "课程/高数.md",
     "课程/高数",
     "后端开发/CI & CD模式.md",
@@ -189,8 +194,6 @@
     "assets/火狐全屏.md",
     "杂项/assets/项目运行.jpg",
     "未命名",
-    "杂项/assets/火狐全屏.jpg",
-    "杂项/Agent相关.md",
-    "后端开发/分布式与RPC.md"
+    "杂项/assets/火狐全屏.jpg"
   ]
 }
