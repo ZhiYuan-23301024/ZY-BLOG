@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSCode风格聊天界面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #1E1E1E;
+            color: #D4D4D4;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* 侧边栏 */
+        .sidebar {
+            width: 60px;
+            background-color: #1A1A1A;
+            border-right: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .sidebar-icon {
+            width: 40px;
+            height: 40px;
+            margin: 8px 0;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-icon:hover {
+            background-color: #333;
+        }
+
+        .sidebar-icon.active {
+            background-color: #0E639C;
+        }
+
+        .icon {
+            font-size: 20px;
+        }
+
+        /* 工作区 */
+        .workspace {
+            width: 300px;
+            background-color: #252526;
+            border-right: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .workspace-header {
+            padding: 16px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .workspace-title {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .workspace-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .action-btn {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .action-btn:hover {
+            background-color: #333;
+        }
+
+        .contact-list {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .contact-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid #333;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-item:hover {
+            background-color: #2D2D30;
+        }
+
+        .contact-item.active {
+            background-color: #0E639C;
+        }
+
+        .contact-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #0E639C;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-name {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .contact-message {
+            font-size: 12px;
+            color: #888;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .contact-time {
+            font-size: 11px;
+            color: #888;
+        }
+
+        /* 聊天窗口 */
+        .chat-window {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: #1E1E1E;
+        }
+
+        .chat-header {
+            padding: 16px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #0E639C;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+        }
+
+        .chat-info {
+            flex: 1;
+        }
+
+        .chat-name {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .chat-status {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .chat-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .message {
+            max-width: 70%;
+            padding: 12px 16px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .message-sent {
+            align-self: flex-end;
+            background-color: #0E639C;
+            color: white;
+        }
+
+        .message-received {
+            align-self: flex-start;
+            background-color: #2D2D30;
+        }
+
+        .message-time {
+            font-size: 10px;
+            color: #888;
+            margin-top: 4px;
+            text-align: right;
+        }
+
+        .message-received .message-time {
+            text-align: left;
+        }
+
+        .chat-input {
+            padding: 16px;
+            border-top: 1px solid #333;
+            background-color: #252526;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background-color: #333;
+            border-radius: 8px;
+            padding: 8px 12px;
+        }
+
+        .input-icon {
+            cursor: pointer;
+            color: #888;
+            transition: all 0.2s ease;
+        }
+
+        .input-icon:hover {
+            color: #D4D4D4;
+        }
+
+        .input-field {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #D4D4D4;
+            font-size: 14px;
+        }
+
+        .send-btn {
+            background-color: #0E639C;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .send-btn:hover {
+            background-color: #1177BB;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 侧边栏 -->
+        <div class="sidebar">
+            <div class="sidebar-icon active">
+                <span class="icon">👥</span>
+            </div>
+            <div class="sidebar-icon">
+                <span class="icon">📅</span>
+            </div>
+            <div class="sidebar-icon">
+                <span class="icon">⚙️</span>
+            </div>
+        </div>
+
+        <!-- 工作区 -->
+        <div class="workspace">
+            <div class="workspace-header">
+                <div class="workspace-title">联系人</div>
+                <div class="workspace-actions">
+                    <div class="action-btn">
+                        <span>+</span>
+                    </div>
+                    <div class="action-btn">
+                        <span>🔍</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-list">
+                <div class="contact-item active">
+                    <div class="contact-avatar">A</div>
+                    <div class="contact-info">
+                        <div class="contact-name">Alice</div>
+                        <div class="contact-message">Hello! How are you?</div>
+                    </div>
+                    <div class="contact-time">10:30</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-avatar">B</div>
+                    <div class="contact-info">
+                        <div class="contact-name">Bob</div>
+                        <div class="contact-message">Did you finish the project?</div>
+                    </div>
+                    <div class="contact-time">09:15</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-avatar">C</div>
+                    <div class="contact-info">
+                        <div class="contact-name">Charlie</div>
+                        <div class="contact-message">See you tomorrow!</div>
+                    </div>
+                    <div class="contact-time">Yesterday</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-avatar">D</div>
+                    <div class="contact-info">
+                        <div class="contact-name">David</div>
+                        <div class="contact-message">Thanks for the help!</div>
+                    </div>
+                    <div class="contact-time">Yesterday</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-avatar">E</div>
+                    <div class="contact-info">
+                        <div class="contact-name">Eve</div>
+                        <div class="contact-message">Let's meet for lunch.</div>
+                    </div>
+                    <div class="contact-time">2 days ago</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 聊天窗口 -->
+        <div class="chat-window">
+            <div class="chat-header">
+                <div class="chat-avatar">A</div>
+                <div class="chat-info">
+                    <div class="chat-name">Alice</div>
+                    <div class="chat-status">Online</div>
+                </div>
+                <div class="chat-actions">
+                    <div class="action-btn">
+                        <span>📞</span>
+                    </div>
+                    <div class="action-btn">
+                        <span>📹</span>
+                    </div>
+                    <div class="action-btn">
+                        <span>⋮</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-messages">
+                <div class="message message-received">
+                    <div>Hello! How are you today?</div>
+                    <div class="message-time">10:00</div>
+                </div>
+                <div class="message message-sent">
+                    <div>I'm doing well, thanks! How about you?</div>
+                    <div class="message-time">10:01</div>
+                </div>
+                <div class="message message-received">
+                    <div>I'm good too. Did you see the new movie?</div>
+                    <div class="message-time">10:05</div>
+                </div>
+                <div class="message message-sent">
+                    <div>Yes, I watched it last night. It was amazing!</div>
+                    <div class="message-time">10:10</div>
+                </div>
+                <div class="message message-received">
+                    <div>Great! We should discuss it sometime.</div>
+                    <div class="message-time">10:15</div>
+                </div>
+                <div class="message message-sent">
+                    <div>Sure, that sounds good. When are you free?</div>
+                    <div class="message-time">10:20</div>
+                </div>
+                <div class="message message-received">
+                    <div>How about this weekend?</div>
+                    <div class="message-time">10:30</div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <div class="input-container">
+                    <div class="input-icon">😊</div>
+                    <div class="input-icon">📎</div>
+                    <input type="text" class="input-field" placeholder="Type a message...">
+                    <button class="send-btn">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
