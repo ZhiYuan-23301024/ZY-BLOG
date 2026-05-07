@@ -13,10 +13,10 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Excalidraw/Drawing 2026-05-07 10.40.42.excalidraw.md"
+                "file": "Excalidraw/3-各层协议总结 2026-05-07 19.58.13.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "Drawing 2026-05-07 10.40.42.excalidraw"
+              "title": "3-各层协议总结 2026-05-07 19.58.13.excalidraw"
             }
           }
         ]
@@ -154,19 +154,29 @@
   },
   "active": "8999044fc3bfe035",
   "lastOpenFiles": [
+    "课程/计算机网络/3-各层协议总结.md",
+    "课程/计算机组成原理/1-概述-层次结构.md",
+    "Excalidraw/3-各层协议总结 2026-05-07 19.58.13.excalidraw.md",
+    "Excalidraw/3-各层协议总结 2026-05-07 19.58.13.excalidraw.png",
+    "课程/高数/第8讲：一元函数积分学的概念和性质.md",
+    "Excalidraw/Scripts/未命名.md",
+    "Excalidraw/未命名.md",
+    "Excalidraw/Module",
+    "Excalidraw/Scripts/Grid Selected Text.md",
     "Excalidraw/Scripts/DrawTable.md",
     "Excalidraw/Drawing 2026-05-07 10.40.42.excalidraw.md",
-    "Excalidraw/Scripts/Downloaded/Auto Layout.svg",
     "Excalidraw/Scripts/Downloaded/Auto Layout.md",
+    "Excalidraw/Scripts/Downloaded/Text to Sticky Notes.svg",
+    "Excalidraw/Scripts/Downloaded/Text to Sticky Notes.md",
+    "Excalidraw/Scripts/Downloaded/Auto Layout.svg",
+    "AI Infra/资料.md",
     "Excalidraw/Scripts/Downloaded",
     "Excalidraw/Scripts",
     "Excalidraw/Drawing 2026-05-05 17.00.17.excalidraw.md",
     "Excalidraw/Drawing 2026-05-07 10.40.42.excalidraw.png",
     "Excalidraw/Drawing 2026-05-05 20.50.59.excalidraw.md",
     "Excalidraw/Drawing 2026-05-05 17.00.17.excalidraw.png",
-    "AI Infra/资料.md",
     "Excalidraw/Drawing 2026-05-05 20.50.59.excalidraw.png",
-    "课程/计算机组成原理/1-概述-层次结构.md",
     "Excalidraw/1-概述-层次结构 2026-05-06 20.34.44.excalidraw.md",
     "Excalidraw/1-概述-层次结构 2026-05-06 20.34.44.excalidraw.png",
     "Excalidraw/Drawing 2026-05-06 20.22.56.excalidraw.png",
@@ -174,30 +184,21 @@
     "Excalidraw/1-概述-层次结构 2026-05-06 20.24.56.excalidraw.md",
     "Excalidraw/1-概述-层次结构 2026-05-06 20.30.40.excalidraw.md",
     "Excalidraw/1-概述-层次结构 2026-05-06 20.30.40.excalidraw.png",
-    "Excalidraw/1-概述-层次结构 2026-05-06 20.28.51.excalidraw.png",
     "Excalidraw/1-概述-层次结构 2026-05-06 20.28.51.excalidraw.md",
     "课程/计算机组成原理.md",
     "Excalidraw/Drawing 2026-05-06 20.22.56.excalidraw.md",
     "课程/计算机网络/1-分层结构.md",
-    "课程/高数/第8讲：一元函数积分学的概念和性质.md",
     "课程/计算机组成原理",
     "课程/高数/第7讲：一元微分——中值定理、微分等式和不等式.md",
     "课程/操作系统/6-进程管理-同步和互斥.md",
     "课程/操作系统/7-进程管理-经典同步问题.md",
     "课程/操作系统/5-进程管理-处理机调度.md",
     "课程/操作系统/8-进程管理-死锁.md",
-    "课程/操作系统/进程管理-死锁.md",
-    "课程/操作系统/4-进程管理-进程和线程.md",
     "Excalidraw",
-    "课程/操作系统/assets/file-2026-05-05-16--05-74.png",
-    "课程/操作系统/进程管理-同步和互斥.md",
-    "课程/操作系统/内存管理.md",
-    "课程/操作系统.md",
     "课程/计算机网络",
     "课程/操作系统/assets",
     "小小说",
     "课程/线性代数",
-    "课程/操作系统",
-    "课程/计算机网络"
+    "课程/操作系统"
   ]
 }
