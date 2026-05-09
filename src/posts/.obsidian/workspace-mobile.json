@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "课程/rust-os-lab/lab0-创建环境.md",
+                "file": "课程/计算机组成原理/2-概述-性能指标.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "lab0-创建环境"
+              "title": "2-概述-性能指标"
             }
           },
           {
@@ -110,7 +110,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "课程/rust-os-lab/lab0-创建环境.md",
+            "file": "课程/计算机组成原理/2-概述-性能指标.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -168,6 +168,8 @@
   },
   "active": "5c5f6d03048e13e2",
   "lastOpenFiles": [
+    "AI Infra/资料.md",
+    "课程/rust-os-lab/lab0-创建环境.md",
     "课程/rust-os-lab/assets/Pasted image 20260509174556.png",
     "课程/rust-os-lab/assets/Pasted image 20260509174532.png",
     "课程/rust-os-lab/assets/Pasted image 20260509171717.png",
@@ -176,17 +178,14 @@
     "课程/rust-os-lab/assets/Pasted image 20260509155442.png",
     "课程/assets/Pasted image 20260509150826.png",
     "课程/assets/Pasted image 20260509153440.png",
-    "课程/rust-os-lab/lab0-创建环境.md",
     "课程/rust-os-lab/assets/Pasted image 20260509154351.png",
     "课程/rust-os-lab/assets",
     "课程/assets/image.png",
-    "AI Infra/资料.md",
     "课程/rust-os-lab",
     "课程/计算机组成原理/2-概述-性能指标.md",
     "课程/数据结构/树.md",
     "课程/计算机组成原理/1-概述-层次结构.md",
     "小小说/未命名.md",
-    "Excalidraw/未命名 2026-05-08 16.16.07.excalidraw.dark.png",
     "Excalidraw/未命名 2026-05-08 16.01.06.excalidraw.md",
     "Excalidraw/未命名 2026-05-08 16.17.19.excalidraw.md",
     "Excalidraw/未命名 2026-05-08 16.16.07.excalidraw.md",
