@@ -13,12 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "课程/计算机组成原理/2-概述-性能指标.md",
+                "file": "课程/rust-os-lab/lab0-创建环境.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2-概述-性能指标"
+              "title": "lab0-创建环境"
+            }
+          },
+          {
+            "id": "d4d8bf08b97157c8",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "课程/assets/Pasted image 20260509153440.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20260509153440"
             }
           }
         ]
@@ -37,7 +49,7 @@
           "type": "file-explorer",
           "state": {
             "sortOrder": "alphabetical",
-            "autoReveal": true
+            "autoReveal": false
           },
           "icon": "lucide-folder-closed",
           "title": "文件列表"
@@ -98,7 +110,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Excalidraw/1-概述-层次结构 2026-05-08 14.30.35.excalidraw.png",
+            "file": "课程/rust-os-lab/lab0-创建环境.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -154,10 +166,22 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "5c5f6d03048e13e2",
+  "active": "edbae205d64eb6e8",
   "lastOpenFiles": [
-    "课程/数据结构/树.md",
+    "课程/rust-os-lab/assets/Pasted image 20260509171717.png",
+    "课程/rust-os-lab/assets/Pasted image 20260509163126.png",
+    "课程/rust-os-lab/assets/Pasted image 20260509163054.png",
+    "课程/rust-os-lab/assets/Pasted image 20260509155442.png",
+    "课程/assets/Pasted image 20260509150826.png",
+    "课程/assets/Pasted image 20260509153440.png",
+    "课程/rust-os-lab/lab0-创建环境.md",
+    "课程/rust-os-lab/assets/Pasted image 20260509154351.png",
+    "课程/rust-os-lab/assets",
+    "课程/assets/image.png",
+    "AI Infra/资料.md",
+    "课程/rust-os-lab",
     "课程/计算机组成原理/2-概述-性能指标.md",
+    "课程/数据结构/树.md",
     "课程/计算机组成原理/1-概述-层次结构.md",
     "小小说/未命名.md",
     "Excalidraw/未命名 2026-05-08 16.16.07.excalidraw.dark.png",
@@ -166,16 +190,9 @@
     "Excalidraw/未命名 2026-05-08 16.17.19.excalidraw.dark.png",
     "Excalidraw/未命名 2026-05-08 16.17.19.excalidraw.light.png",
     "Excalidraw/未命名 2026-05-08 16.16.07.excalidraw.md",
-    "Excalidraw/未命名 2026-05-08 16.16.07.excalidraw.light.png",
     "Excalidraw/未命名 2026-05-08 16.15.26.excalidraw.md",
-    "Excalidraw/未命名 2026-05-08 16.15.26.excalidraw.dark.png",
-    "Excalidraw/未命名 2026-05-08 16.15.26.excalidraw.light.png",
     "Excalidraw/未命名 2026-05-08 16.14.52.excalidraw.md",
-    "Excalidraw/未命名 2026-05-08 16.14.52.excalidraw.dark.png",
-    "Excalidraw/未命名 2026-05-08 16.14.52.excalidraw.light.png",
-    "Excalidraw/未命名 2026-05-08 16.09.22.excalidraw.light.png",
     "Excalidraw/未命名 2026-05-08 16.09.22.excalidraw.md",
-    "Excalidraw/未命名 2026-05-08 16.09.22.excalidraw.dark.png",
     "Excalidraw/未命名 2026-05-08 16.08.41.excalidraw.md",
     "Excalidraw/未命名 2026-05-08 16.06.49.excalidraw.md",
     "Excalidraw/未命名 2026-05-08 16.04.37.excalidraw.md",
@@ -189,9 +206,6 @@
     "Excalidraw/未命名 2026-05-08 15.43.19.excalidraw.md",
     "Excalidraw/未命名 2026-05-08 15.34.50.excalidraw.md",
     "Excalidraw/未命名 2026-05-08 15.29.13.excalidraw.md",
-    "Excalidraw/未命名 2026-05-08 15.34.06.excalidraw.md",
-    "Excalidraw/Drawing 2026-05-08 15.25.04.excalidraw.md",
-    "Excalidraw/2-概述-性能指标 2026-05-08 15.14.04.excalidraw.md",
     "Excalidraw/Module",
     "Excalidraw/Scripts/Downloaded",
     "Excalidraw/Scripts",
@@ -199,8 +213,6 @@
     "Excalidraw",
     "课程/计算机网络",
     "课程/操作系统/assets",
-    "小小说",
-    "课程/线性代数",
-    "课程/操作系统"
+    "小小说"
   ]
 }
