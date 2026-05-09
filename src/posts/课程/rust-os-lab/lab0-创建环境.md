@@ -175,3 +175,8 @@ qemu-riscv64 --version
 ```
 
 ![[Pasted image 20260509171717.png]]
+
+### git 提交截图
+
+![[Pasted image 20260509174532.png]]
+![[Pasted image 20260509174556.png]]
