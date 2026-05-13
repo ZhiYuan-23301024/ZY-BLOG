@@ -31,7 +31,7 @@ udocker images
 
 #### 创建工作目录
 本地机器指的是启动镜像时所在的终端环境
-在本实例中指的是termux的bash终端环境，如果使用win系统，win的文件管理环境就是本地环境，Linux同理。如果使用虚拟机，则虚拟机环境里的文件管理环境就是本地环境。
+在本实例中指的是termux的bash终端环境，如果使用win系统，win的文件管理环境就是本地环境，Linux同理。如果使用虚拟机，则虚拟机环境里的文件管理环境就是本地环境
 
 ```bash
 # 进入存放工作目录的文件夹
@@ -43,14 +43,14 @@ mkdir MyOS
 #### 创建自己的docker镜像
 
 在自己创建的实验目录下执行如下命令：
-注意：执行如下命令需要在自己创建的实验目录下。
+注意：执行如下命令需要在自己创建的实验目录下
 ```bash
 # 创建容器，并将容器的mnt目录挂载在本地实验目录下
 udocker run -i -t --name=OS -v /data/data/com.termux/files/home/Downloads/MyProjects/MyOS:/mnt openeuler/openeuler
 # 退出容器
 exit
 # 重新进入容器
-udocker run -v /data/data/com.termux/files/home/Downloads/MyProjects/MyOS:/mnt -i -t OS bash
+udocker run --nosysdirs -v /data/data/com.termux/files/home/Downloads/MyProjects/MyOS:/mnt -i -t OS bash
 ```
 
 成功进入容器后可看到终端输出如下
