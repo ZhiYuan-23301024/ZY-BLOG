@@ -4,35 +4,53 @@
     "type": "split",
     "children": [
       {
-        "id": "f55d6c5764a2ab28",
+        "id": "31f49300913cb8e8",
         "type": "tabs",
         "children": [
           {
-            "id": "5c5f6d03048e13e2",
+            "id": "ed911f532080e08a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "课程/高数/9-一元微分积分学的计算.md",
-                "mode": "source",
-                "source": false
+                "file": "AI Infra/assets/Pasted image 20260512150019.png"
               },
-              "icon": "lucide-file",
-              "title": "9-一元微分积分学的计算"
+              "icon": "lucide-image",
+              "title": "Pasted image 20260512150019"
             }
           },
           {
-            "id": "012960a61e698b20",
+            "id": "858f8206f4019840",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "课程/rust-os-lab/lab0-创建环境.md",
+                "file": "课程/rust-os-lab/lab1-第一个rust独立程序.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "lab0-创建环境"
+              "title": "lab1-第一个rust独立程序"
+            }
+          }
+        ]
+      },
+      {
+        "id": "5876635ed3e2bcca",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b5d49f51798bdb0b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "课程/rust-os-lab/lab1-第一个rust独立程序.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "lab1-第一个rust独立程序"
             }
           }
         ]
@@ -168,22 +186,26 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "5c5f6d03048e13e2",
+  "active": "b5d49f51798bdb0b",
   "lastOpenFiles": [
-    "课程/高数/常见函数的导数和原函数.md",
-    "课程/高数/9-一元微分积分学的计算.md",
-    "杂项/termux安装代码辅助CLI（goose）.md",
-    "课程/rust-os-lab/lab0-创建环境.md",
+    "AI Infra/assets/Pasted image 20260512150019.png",
     "课程/rust-os-lab/lab1-第一个rust独立程序.md",
+    "AI Infra/assets/Pasted image 20260512150038.png",
+    "AI Infra/资料.md",
+    "AI Infra/assets/Pasted image 20260512150102.png",
+    "课程/rust-os-lab/lab2-最小内核.md",
+    "课程/高数/第9讲-一元微分积分学的计算.md",
+    "社会常识/薪酬待遇的组成部分.md",
+    "社会常识",
+    "课程/rust-os-lab/lab0-创建环境.md",
+    "课程/高数/9-一元微分积分学的计算.md",
+    "课程/高数/常见函数的导数和原函数.md",
+    "杂项/termux安装代码辅助CLI（goose）.md",
     "课程/数据结构/4-5-线性表-顺序表示-链式表示.md",
     "课程/数据结构/线性表.md",
     "课程/数据结构/查找.md",
     "课程/数据结构/3-线性表-定义和基操.md",
     "课程/数据结构/1-2-绪论.md",
-    "AI Infra/资料.md",
-    "AI Infra/assets/Pasted image 20260512150102.png",
-    "AI Infra/assets/Pasted image 20260512150038.png",
-    "AI Infra/assets/Pasted image 20260512150019.png",
     "AI Infra/assets/Pasted image 20260512150006.png",
     "AI Infra/assets/Pasted image 20260512145954.png",
     "AI Infra/assets",
@@ -205,16 +227,11 @@
     "课程/计算机组成原理/1-概述-层次结构.md",
     "小小说/未命名.md",
     "Excalidraw/未命名 2026-05-08 16.01.06.excalidraw.md",
-    "Excalidraw/未命名 2026-05-08 16.17.19.excalidraw.md",
-    "Excalidraw/未命名 2026-05-08 16.16.07.excalidraw.md",
-    "Excalidraw/未命名 2026-05-08 16.15.26.excalidraw.md",
-    "Excalidraw/未命名 2026-05-08 16.14.52.excalidraw.md",
     "Excalidraw/Module",
     "Excalidraw/Scripts/Downloaded",
     "Excalidraw/Scripts",
     "课程/计算机组成原理",
     "Excalidraw",
-    "课程/计算机网络",
-    "课程/操作系统/assets"
+    "课程/计算机网络"
   ]
 }
