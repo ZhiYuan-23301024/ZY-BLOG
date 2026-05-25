@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "课程/操作系统/9-内存管理-概念.md",
+                "file": "课程/rust-os-lab/lab3-简单的批处理操作系统.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "9-内存管理-概念"
+              "title": "lab3-简单的批处理操作系统"
             }
           }
         ]
@@ -156,12 +156,17 @@
   },
   "active": "488e691b793c553f",
   "lastOpenFiles": [
-    "课程/操作系统/assets/9-内存管理-概念 2026-05-25 10.26.41.excalidraw.md",
+    "课程/rust-os-lab/lab1-第一个rust独立程序.md",
+    "课程/rust-os-lab/lab3-简单的批处理操作系统.md",
+    "课程/rust-os-lab/lab2-最小内核.md",
+    "课程/rust-os-lab/lab0-创建环境.md",
+    "课程/操作系统/10-内存管理-虚拟内存.md",
     "课程/操作系统/9-内存管理-概念.md",
+    "杂项/termux安装代码辅助CLI（goose）.md",
+    "课程/计算机组成原理/2-概述-性能指标.md",
+    "课程/操作系统/assets/9-内存管理-概念 2026-05-25 10.26.41.excalidraw.md",
     "课程/操作系统/assets/9-内存管理-概念 2026-05-25 10.26.41.excalidraw.dark.png",
     "课程/操作系统/assets/9-内存管理-概念 2026-05-25 10.26.41.excalidraw.light.png",
-    "课程/rust-os-lab/lab0-创建环境.md",
-    "课程/rust-os-lab/lab2-最小内核.md",
     "课程/计算机网络/3-各层协议总结.md",
     "课程/机器学习.md",
     "课程/操作系统.md",
@@ -169,16 +174,13 @@
     "课程/高数/常见函数的导数和原函数以及奇妙的换元方法.md",
     "课程/高数/第8讲：一元函数积分学的概念和性质.md",
     "杂项/使用LazyVim的正确姿势.md",
-    "杂项/termux安装代码辅助CLI（goose）.md",
     "课程/高数/第7讲：一元微分——中值定理、微分等式和不等式.md",
     "杂项/在平板本地搭建轻生产力环境.md",
     "课程/操作系统/8-进程管理-死锁.md",
     "课程/操作系统/4-进程管理-进程和线程.md",
-    "课程/rust-os-lab/lab1-第一个rust独立程序.md",
     "课程/计算机网络/2-网络设备.md",
     "课程/计算机网络/1-分层结构.md",
     "课程/计算机组成原理/3-数据-整数的表示.md",
-    "课程/计算机组成原理/2-概述-性能指标.md",
     "课程/操作系统/assets/9-内存管理-概念 2026-05-18 18.33.27.excalidraw.md",
     "课程/操作系统/assets/9-内存管理-概念 2026-05-18 18.20.40.excalidraw.md",
     "课程/操作系统/assets/9-内存管理-概念 2026-05-18 18.33.27.excalidraw.dark.png",
@@ -189,7 +191,6 @@
     "AI Infra/assets/Pasted image 20260512150038.png",
     "AI Infra/资料.md",
     "AI Infra/assets/Pasted image 20260512150102.png",
-    "社会常识/薪酬待遇的组成部分.md",
     "社会常识",
     "AI Infra/assets/Pasted image 20260512150006.png",
     "AI Infra/assets",

@@ -42,13 +42,17 @@ rust-readobj -h target/riscv64gc-unknown-none-elf/release/os
 通过链接文件linker.ld可以实现指定可执行文件的内存布局。同时，我们还需要修改Cargo的配置文件来使用我们的链接脚本而不是默认的内存布局。
 
 首先，修改os/.cargo/config.toml，增加如下内容：
+```rust
 [target.riscv64gc-unknown-none-elf]
 rustflags = [
     "-C", "link-arg=-Tsrc/linker.ld",
 ]
 
+```
+
 链接脚本文件os/src/linker.ld的内容如下：
 
+```rust
 OUTPUT_ARCH(riscv)
 ENTRY(_start)
 BASE_ADDRESS = 0x80200000;
@@ -98,12 +102,15 @@ SECTIONS
     }
 }
 
+```
 ### 配置栈空间布局
 
 为了程序能够正确的执行，我们还需要设置正确的栈空间。
 
 栈空间的通过汇编entry.asm来建立，文件目录为：os/src/entry.asm。
 文件内容具体如下：
+
+```rust
 
     .section .text.entry
     .globl _start
@@ -117,7 +124,7 @@ boot_stack:
     .space 4096 * 16
     .globl boot_stack_top
 boot_stack_top:
-
+```
 
 然后，我们还需要在 main.rs 中嵌入这些汇编代码并声明应用入口 rust_main。
 
