@@ -8,7 +8,6 @@ title: lab3-简单的批处理操作系统
 ## git日志截图
 
 ![](./assets/file-2026-05-25-23--05-22.jpg)
-
 本实验的主要目的是实现一个简单的批处理操作系统并理解特权级的概念。
 
 ## 设计和实现应用程序
@@ -56,7 +55,9 @@ pub fn sys_exit(exit_code: i32) -> isize {
     syscall(SYSCALL_EXIT, [exit_code as usize, 0, 0])
 }
 ```
+
 ![](./assets/file-2026-05-25-20--05-87.png)
+
 同时，还需要在lib.rs实现进一步的封装。
 在user/src/lib.rs中增加如下内容：
 
@@ -69,6 +70,8 @@ pub fn write(fd: usize, buf: &[u8]) -> isize { sys_write(fd, buf) }
 pub fn exit(exit_code: i32) -> isize { sys_exit(exit_code) }
 ```
 ![](./assets/file-2026-05-25-20--05-68.png)
+
+
 
 ### 实现格式化输出
 
@@ -109,6 +112,7 @@ macro_rules! println {
 }
 ```
 ![](./assets/file-2026-05-25-20--05-12.png)
+
 ### 实现语义支持
 
 此外，还需要实现对panic的处理。具体代码在user/src/lang_items.rs。
@@ -134,7 +138,6 @@ fn panic_handler(panic_info: &PanicInfo) -> ! {
 }
 ```
 
-![](./assets/file-2026-05-25-20--05-33.png)
 
 ### 应用程序内存布局
 
@@ -175,7 +178,6 @@ SECTIONS
     }
 }
 ```
-![](./assets/file-2026-05-25-20--05-67.png)
 同时，注意增加配置文件使用linker.ld文件，user/.cargo/config配置文件的内容如下：
 
 ```config
@@ -188,8 +190,6 @@ rustflags = [
 ]
 ```
 
-![](./assets/file-2026-05-25-20--05-83.png)
-### 最终形成运行时库lib.rs
 
 定义用户库的入口点 _start，_start这段代码编译后会存放在.text.entry代码段中，这在前面内存布局中已经定义了。此外，通过#[linkage = "weak"]确保lib.rs和bin下同时存在main的编译能够通过。在lib.rs增加的代码如下：
 注意：最开始的两行代码需要放在 #![no_std]的下面，放在后面会出现错误。
@@ -226,7 +226,6 @@ fn main() -> i32 {
     panic!("Cannot find main!");
 }
 ```
-![](./assets/file-2026-05-25-20--05-95.png)
 ### 应用程序模板
 
 应用程序都存放在user/src/bin下，模板如下。这段模板代码引入了外部库，就是lib.rs定义以及它所引用的子模块。
@@ -269,7 +268,6 @@ fn main() -> i32 {
     0
 }
 ```
-![](./assets/file-2026-05-25-21--05-97.png)
 /user/src/bin/01store_fault.rs内容具体如下：
 
 ```rust
@@ -285,7 +283,6 @@ fn main() -> i32 {
     0
 }
 ```
-![](./assets/file-2026-05-25-21--05-39.png)
 /user/src/bin/02power.rs内容具体如下：
 
 ```rust
@@ -314,7 +311,6 @@ fn main() -> i32 {
     0
 }
 ```
-![](./assets/file-2026-05-25-21--05-47.png)
 ### 编译生成应用程序二进制码
 
 编写Makefile文件，user/Makefile内容如下：
@@ -346,6 +342,7 @@ build: binary
 
 执行make build进行编译
 ![](./assets/file-2026-05-25-22--05-03.jpg)
+
 编译完成后，我们可以利用qemu-riscv64模拟器执行编译生成的程序。需要注意的是，特权指令在这里是无法直接执行的。至此，应用程序设计实现完成。例如：
 
 通过如下命令就可以执行我们自己编写的hello_world程序。
@@ -355,8 +352,6 @@ cd user/target/riscv64gc-unknown-none-elf/release
 qemu-riscv64 00hello_world 
 
 ```
-
-![](./assets/file-2026-05-25-23--05-17.jpg)
 ## 链接应用程序到内核
 
 为了将编译生成的应用程序二进制码动态链接到内容中，我们需要编写一个编译脚本os/build.rs以生成专门用于链接的脚本文件link_app.S。注意是该汇编脚本直接放在项目文件夹 os 中，而不是源码文件夹 src。当执行cargo build命令时就会执行build.rs脚本。
@@ -414,7 +409,6 @@ app_{0}_end:"#, idx, app, TARGET_PATH)?;
 }
 
 ```
-![](./assets/file-2026-05-25-23--05-31.png)
 ## 找到并加载应用程序二进制码
 
 为了实现批处理操作系统，我们在os目录下实现一个batch子模块。其主要功能是保存应用程序的数据及对应的位置信息，以及当前执行到第几个应用程序。同时，也会初始化应用程序所需的内存并加载执行应用程序。
@@ -523,8 +517,8 @@ pub fn run_next_app() -> ! {
     }
     panic!("Unreachable in batch::run_current_app!");
 }
+
 ```
-![](./assets/file-2026-05-25-23--05-63.png)
 因为使用了外部库 lazy_static 提供的 lazy_static! 宏，因此需要在Cargo.toml中加入依赖。lazy_static!宏提供了全局变量的运行时初始化功能，我们借助lazy_static!声明了一个 AppManager结构的全局实例APP_MANAGER，使得只有在第一次使用它时才会进行实际的初始化工作。
 
 修改os/Cargo.toml配置文件，在[dependencies]下增加如下内容：
@@ -532,7 +526,6 @@ pub fn run_next_app() -> ! {
 ```toml
 lazy_static = { version = "1.4.0", features = ["spin_no_std"] }
 ```
-![](./assets/file-2026-05-25-23--05-97.png)
 
 ## 实现用户栈和内核栈
 
@@ -575,7 +568,7 @@ impl UserStack {
 }
 
 ```
-![](./assets/file-2026-05-25-23--05-92.png)
+
 其中，TrapContext是在trap中定义的。
 
 // os/src/trap/context.rs
@@ -589,7 +582,6 @@ pub struct TrapContext {
 }
 ```
 
-![](./assets/file-2026-05-25-23--05-40.png)
 ## 实现trap管理
 
 特权级切换的主要内容就是实现对trap的管理。其主要内容就是当应用程序通过ecall进入到内核状态时，要保存被中断的应用程序的上下文。同时，还要根据CSR寄存器内容完成系统调用的分发与处理。在完成系统调用后，还需要恢复被中断的应用程序的上下文，并通 sret 让应用程序继续执行。
@@ -614,7 +606,7 @@ pub fn init() {
     }
 }
 ```
-![](./assets/file-2026-05-25-23--05-72.png)
+
 这里我们引入了外部符号__alltraps来将Trap上线文保存在内核栈上。从上面的代码可以看出 __alltraps 的实现在os/src/trap/trap.S中，具体内容如下：
 
 ```asem
@@ -659,8 +651,8 @@ __alltraps:
     # set input argument of trap_handler(cx: &mut TrapContext)
     mv a0, sp
     call trap_handler
+
 ```
-![](./assets/file-2026-05-25-23--05-48.png)
 当Trap处理函数返回之后，还需要从栈上的Trap 上下文恢复的。我们通过 __restore来实现。
 
 ```asem
@@ -696,7 +688,6 @@ __restore:
     csrrw sp, sscratch, sp
     sret
 ```
-![](./assets/file-2026-05-25-23--05-98.png)
 ### Trap 分发与处理
 
 我们通过实现trap_handler 函数完成Trap的分发和处理。
@@ -746,11 +737,11 @@ pub fn trap_handler(cx: &mut TrapContext) -> &mut TrapContext {
 }
 
 pub use context::TrapContext;
+
 ```
-![](./assets/file-2026-05-25-23--05-36.png)
 因为引入了riscv库，所以需要修改配置文件Cargo.toml，在[dependencies]下增加如下内容：
 riscv = { git = "https://github.com/rcore-os/riscv", features = ["inline-asm"] }
-![](./assets/file-2026-05-25-23--05-82.png)
+
 ### 系统调用处理
 
 为了实现对系统调用的处理，我们还需要实现syscall模块。syscall函数并不真正的处理系统调用，而是根据syscall ID分发到具体的处理函数进行处理。具体实现如下：
@@ -766,6 +757,11 @@ mod process;
 
 use fs::*;
 use process::*;
+<<<<<<< HEAD
+![](./assets/file-2026-05-25-23--05-93.png)
+=======
+
+>>>>>>> 0c39ee05a2106e454158d898d0a70c246c8157f2
 
 pub fn syscall(syscall_id: usize, args: [usize; 3]) -> isize {
     match syscall_id {
@@ -775,7 +771,6 @@ pub fn syscall(syscall_id: usize, args: [usize; 3]) -> isize {
     }
 }
 ```
-![](./assets/file-2026-05-25-23--05-92%201.png)
 // os/src/syscall/fs.rs
 
 ```rust
@@ -796,7 +791,6 @@ pub fn sys_write(fd: usize, buf: *const u8, len: usize) -> isize {
 }
 ```
 
-![](./assets/file-2026-05-25-23--05-93.png)
 // os/src/syscall/process.rs
 
 ```rust
@@ -807,8 +801,6 @@ pub fn sys_exit(exit_code: i32) -> ! {
     run_next_app()
 }
 ```
-![](./assets/file-2026-05-25-23--05-76.png)
-
 ## 执行应用程序
 
 在执行应用程序之前，需要跳转到应用程序入口0x80400000，切换到用户栈，设置sscratch指向内核栈，并且用S特权级切换到U特权级。我们可以通过复用__restore的代码来实现这些操作。这样的话，只需要在内核栈上压入一个启动应用程序而特殊构造的Trap上线文，再通过__restore函数就可以实现寄存在为启动应用程序所需的上下文状态。
@@ -835,7 +827,8 @@ impl TrapContext {
     }
 }
 ```
-![](./assets/file-2026-05-25-23--05-53.png)
+
+
 同时，在batch.rs的run_next_app中我们可以看到调用了__restore在内核栈上压入了一个Trap上下文。
 
 ## 修改main.rs
@@ -879,7 +872,6 @@ pub fn rust_main() -> ! {
 }
 
 ```
-![](./assets/file-2026-05-25-23--05-02.png)
 至此，批处理操作系统的实现完成。运行操作系统，查看系统运行结果是否正确。
 ![](./assets/file-2026-05-25-23--05-06.png)
 ## 思考并回答问题
@@ -1038,3 +1030,6 @@ pub struct TrapContext {
 3. **异常分类处理**：根据不同的 Trap 类型采取不同的处理策略
 4. **原子性操作**：使用原子指令 `csrrw` 确保栈切换的原子性
 5. **指令缓存一致性**：使用 `fence.i` 确保指令缓存与内存同步
+
+
+
