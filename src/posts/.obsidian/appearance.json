@@ -2,5 +2,6 @@
   "theme": "obsidian",
   "cssTheme": "Things",
   "interfaceFontFamily": "Arial Black",
-  "enabledCssSnippets": []
+  "enabledCssSnippets": [],
+  "accentColor": "#521a91"
 }
