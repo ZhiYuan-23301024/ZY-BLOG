@@ -1,6 +1,8 @@
-
+src/posts/.trash
 node_modules/
 src/.vuepress/.cache/
 src/.vuepress/.temp/
 src/.vuepress/dist/
 src/posts/.obsidian/
+src/textbook/
+src/posts/教材
